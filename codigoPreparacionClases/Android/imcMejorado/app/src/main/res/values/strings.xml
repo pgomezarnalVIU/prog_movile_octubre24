@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">imcMejorado</string>
+
+    <!--IMC MEJORADA -->
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="altura">Altura</string>
+    <string name="edad">Edad</string>
+    <string name="peso">Peso</string>
+    <string name="calcular">Calcular</string>
+    <string name="resultado">Resultado</string>
+    <string name="reCalcular">Volver a Calcular</string>
+</resources>
