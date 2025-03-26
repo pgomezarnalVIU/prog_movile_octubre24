@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AnimeDB</string>
+    <string name="view">View</string>
+    <string name="delete">Delete</string>
+</resources>
