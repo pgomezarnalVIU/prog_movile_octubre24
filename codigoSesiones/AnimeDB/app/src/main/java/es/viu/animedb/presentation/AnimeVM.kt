@@ -1,15 +1,21 @@
 package es.viu.animedb.presentation
 
 import androidx.compose.ui.graphics.Color
+import es.viu.animedb.presentation.components.AnimeEvent
+import es.viu.animedb.presentation.components.SortByAuthor
+import es.viu.animedb.presentation.components.SortByTitle
+import es.viu.animedb.presentation.components.SortByType
+import es.viu.animedb.presentation.components.SortByView
+import es.viu.animedb.presentation.components.SortOrder
 import es.viu.animedb.ui.theme.Purple40
 import es.viu.animedb.ui.theme.Purple80
 import es.viu.animedb.ui.theme.PurpleGrey40
 import es.viu.animedb.ui.theme.PurpleGrey80
 
 //Definir el tipo de anime
-sealed class AnimeType(val backgroundColor: Color,val foregroundColor: Color)
-data object Fantasy:AnimeType(Purple80, PurpleGrey40)
-data object SciFiction: AnimeType(Purple40, PurpleGrey80)
+sealed class AnimeType(val backgroundColor: Color,val foregroundColor: Color, val borderColor:Color)
+data object Fantasy:AnimeType(Purple80, PurpleGrey40, Purple40)
+data object SciFiction: AnimeType(Purple40, PurpleGrey80, Purple80)
 
 //Plantilla de datos
 data class AnimeVM(
@@ -17,7 +23,7 @@ data class AnimeVM(
     val author:String="",
     val year:Int=2000,
     val view: Boolean=false,
-    val animeType: AnimeType
+    val animeType: AnimeType = Fantasy
 )
 
 //Lista de Animes
@@ -43,3 +49,23 @@ val animes: MutableList<AnimeVM> = mutableListOf(
     AnimeVM("Detective Conan", "Gosho Aoyama", 1996,true,Fantasy),
     AnimeVM("Ranma ½", "Rumiko Takahashi", 1989,true,Fantasy)
 )
+
+fun getAnimes(order: SortOrder):List<AnimeVM>{
+    return when(order){
+        SortByAuthor -> animes.sortedBy { it.author }
+        SortByTitle -> animes.sortedBy { it.title }
+        SortByView -> animes.sortedBy { it.view }
+        SortByType -> animes.sortedBy { it.animeType == SciFiction}
+        else -> animes.sortedBy { it.author }
+    }
+}
+
+fun sortAnimes(animes: List<AnimeVM>, event: AnimeEvent.Order): List<AnimeVM>{
+    return when(event.order){
+        SortByAuthor -> animes.sortedBy { it.author }
+        SortByTitle -> animes.sortedBy { it.title }
+        SortByView -> animes.sortedBy { it.view }
+        SortByType -> animes.sortedBy { it.animeType == SciFiction}
+        else -> animes.sortedBy { it.author }
+    }
+}

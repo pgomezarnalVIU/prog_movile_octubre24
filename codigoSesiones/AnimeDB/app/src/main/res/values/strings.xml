@@ -2,4 +2,7 @@
     <string name="app_name">AnimeDB</string>
     <string name="view">View</string>
     <string name="delete">Delete</string>
+    <string name="cabecera">Animes</string>
+    <string name="add">Añadir</string>
+    <string name="save">Save</string>
 </resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AnimeDB</string>
+
+    <string name="vista">Vista</string>
+    <string name="delete">Borrar</string>
+    <string name="cabecera">Animes</string>
+    <string name="add">Anyadir</string>
+    <string name="save">Salvar</string>
+</resources>

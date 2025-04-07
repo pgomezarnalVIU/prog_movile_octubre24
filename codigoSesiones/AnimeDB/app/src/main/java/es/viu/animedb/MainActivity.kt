@@ -5,15 +5,17 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import es.viu.animedb.presentation.ListAnimesScreen
-import es.viu.animedb.presentation.animes
+import es.viu.animedb.presentation.list.ListAnimesScreen
+import es.viu.animedb.presentation.list.ListAnimesViewModel
 import es.viu.animedb.ui.theme.AnimeDBTheme
+import androidx.activity.viewModels
+import androidx.compose.foundation.layout.padding
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import es.viu.animedb.presentation.utils.Screen
 
 class MainActivity : ComponentActivity() {
 
@@ -23,7 +25,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             AnimeDBTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ListAnimesScreen(animes,innerPadding)
+                    //Controller dentro JetPack Compose
+                    val navController = rememberNavController()
+
+                    //Hosts de ventanas
+                    NavHost(
+                        navController = navController,
+                        startDestination = Screen.AnimesListScreen.route,
+                        modifier = Modifier.padding(innerPadding)
+                    ){
+                        composable (route = Screen.AnimesListScreen.route){
+                            val animes: ListAnimesViewModel by viewModels()
+                            ListAnimesScreen(animes,innerPadding)
+                        }
+                    }
                 }
             }
         }

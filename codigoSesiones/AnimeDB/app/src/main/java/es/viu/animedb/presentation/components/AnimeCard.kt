@@ -33,11 +33,15 @@ fun AnimeCard(anime: AnimeVM, onDeleteClick: (AnimeVM)->Unit){
     Box(
         modifier = Modifier
             .fillMaxWidth()
+            .border(
+                width = 5.dp,
+                color = anime.animeType.borderColor,
+                shape = RoundedCornerShape(10.dp))
             .background(
                 color = anime.animeType.backgroundColor,
-                shape = RoundedCornerShape(20.dp)
+                shape = RoundedCornerShape(10.dp)
             )
-            .padding(8.dp)
+            .padding(16.dp)
     )
     {
         Column()
@@ -49,7 +53,7 @@ fun AnimeCard(anime: AnimeVM, onDeleteClick: (AnimeVM)->Unit){
             ){
                 Text(anime.title,
                     style = TextStyle(
-                        fontSize = 14.sp,
+                        fontSize = 32.sp,
                         color = anime.animeType.foregroundColor
                     ),
                     maxLines = 1,
@@ -64,7 +68,7 @@ fun AnimeCard(anime: AnimeVM, onDeleteClick: (AnimeVM)->Unit){
             }
             Text(anime.author,
                 style = TextStyle(
-                    fontSize = 14.sp,
+                    fontSize = 32.sp,
                     color = anime.animeType.foregroundColor
                 ),
                 maxLines = 2,
@@ -81,7 +85,7 @@ fun AnimeCard(anime: AnimeVM, onDeleteClick: (AnimeVM)->Unit){
                 imageVector = Icons.Default.Delete,
                 contentDescription = stringResource(R.string.delete),
                 tint = Color.White,
-                modifier = Modifier.size(16.dp)
+                modifier = Modifier.size(32.dp)
             )
         }
     }
