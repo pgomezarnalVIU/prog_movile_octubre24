@@ -1,0 +1,2 @@
+C:/VIU/Programacion_werables/Octubre_Prog_Moviles_2024/codigo/codigoSesiones/flutter/2_mis_imagenes_Stack/android/app/.cxx/Debug/61tn4p3v/x86/CMakeFiles/edit_cache.dir
+C:/VIU/Programacion_werables/Octubre_Prog_Moviles_2024/codigo/codigoSesiones/flutter/2_mis_imagenes_Stack/android/app/.cxx/Debug/61tn4p3v/x86/CMakeFiles/rebuild_cache.dir

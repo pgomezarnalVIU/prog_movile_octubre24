@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=C:\Users\Paco\AppData\Local\flutter"
-export "FLUTTER_APPLICATION_PATH=C:\VIU\Programacion_werables\wereablessept24\flutter\mis_imagenes"
+export "FLUTTER_APPLICATION_PATH=C:\VIU\Programacion_werables\Octubre_Prog_Moviles_2024\codigo\codigoSesiones\flutter\5_mis_imagenes_datos"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib\main.dart"
 export "FLUTTER_BUILD_DIR=build"

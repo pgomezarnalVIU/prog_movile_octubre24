@@ -18,14 +18,10 @@ class IntroScreen extends StatelessWidget {
           const Center(
             child: Text(
               'Welcome',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24
-                ),
+              style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
-
-              child: ElevatedButton(onPressed: () {}, child: Text('Start')))
+          const Align(alignment: Alignment(0.2, 0.6), child: Text('Start'))
         ]));
   }
 }

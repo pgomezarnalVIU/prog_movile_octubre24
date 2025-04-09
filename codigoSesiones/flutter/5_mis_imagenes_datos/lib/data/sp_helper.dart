@@ -16,7 +16,7 @@ class SPHelper {
       await prefs.setString(keyName, name);
       await prefs.setString(keyImage, image);
       return true;
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return false;
     }
   }
@@ -28,7 +28,7 @@ class SPHelper {
       final String name = prefs.getString(keyName) ?? '';
       final String image = prefs.getString(keyImage) ?? '';
       return {keyName: name, keyImage: image};
-    } on Exception catch (e) {
+    } on Exception catch (_) {
       return {};
     }
   }
