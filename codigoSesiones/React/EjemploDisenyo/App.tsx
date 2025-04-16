@@ -1,16 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet} from 'react-native';
+
 import CompView from './components/CompView';
 import CompFlex from './components/CompFlex';
 import CompImage from './components/CompImage';
+import CompScrollView from './components/CompScrollView';
+import CompTouch from './components/CompTouch';
 
 //ENUM de los diferentes componentes que voy a usar
 const EJEMPLOS={
   COMPVIEW:0,
   FLEX:1,
-  IMAGE:2
+  IMAGE:2,
+  SCROLLVIEW:3,
+  COMPTOUCH:4
 }
-const componenteActual=EJEMPLOS.IMAGE
+const componenteActual=EJEMPLOS.COMPTOUCH
 
 
 export default function App() {
@@ -19,10 +23,12 @@ export default function App() {
     if(componenteActual==EJEMPLOS.COMPVIEW) compCarga=<CompView/>
     else if(componenteActual==EJEMPLOS.FLEX) compCarga=<CompFlex/>
     else if(componenteActual==EJEMPLOS.IMAGE) compCarga=<CompImage/>
+    else if(componenteActual==EJEMPLOS.SCROLLVIEW) compCarga=<CompScrollView/>
+    else if(componenteActual==EJEMPLOS.COMPTOUCH) compCarga=<CompTouch/>
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       {compCarga}
-    </View>
+    </SafeAreaView>
   );
 }
 

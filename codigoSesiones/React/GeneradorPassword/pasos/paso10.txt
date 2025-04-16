@@ -1,0 +1,4 @@
+          <View style={styles.formActions}>
+            <TouchableOpacity><Text>Generar Password</Text></TouchableOpacity>
+            <TouchableOpacity><Text>Reset</Text></TouchableOpacity>
+          </View>
