@@ -10,7 +10,7 @@ import { useCalculadora } from '@/hooks/useCalculadora';
 const Calculadora = () => {
 
   //usamos el Hook
-  const{formula, buildNumero, borrado} = useCalculadora();
+  const{formula,prevNumero, buildNumero, borrado} = useCalculadora();
 
   return (
     <View style={globalStyles.calculadoraContainer}>
@@ -18,7 +18,7 @@ const Calculadora = () => {
       {/* Operaciones y resultados */}
       <View style={{paddingHorizontal:30, marginBottom: 20}}>
         <CustomText variant='h1'>{formula}</CustomText>
-        <CustomText variant='h2'>13</CustomText>
+        <CustomText variant='h2'>{prevNumero}</CustomText>
       </View>
 
       {/* Botones de la calculadora */}
